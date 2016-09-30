@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form>
+        First Name
+        <input type="text" name="firstName" id="firstName">
+        <br>
+        <br> Last Name
+        <input type="text" name="lastName" id="lastName">
+        <br>
+        <br> MALE
+        <input type="radio" name="male">
+        <br>
+        <br> FEMALE
+        <input type="radio" name="female">
+        <br>
+        <br> Select a State
+        <select id="states" name="state">
+            <option value="New York">NEW YORK</option>
+            <option value="New jersey">New JERSEY</option>
+            <option value="Texas">TEXAS</option>
+            <option value="California">CALIFORNIA</option>
+            <option value="Indiana">INDIANA</option>
+            <option value="Florida">FLORIDA</option>
+            <option value="Punjab">PUNJAB</option>
+        </select>
+        <br>
+        <br> I ACCEPT
+        <input type="checkbox" name="need" value="I ACCEPT" id="checkbox">
+        <br>
+        <br>
+        <button id="submit" type="text">SUBMIT</button>
+    </form>
+    <script type="text/javascript" charset="utf-8" async defer>
+    'use strict';
+    var _id = function _id(id) {
+        return document.getElementById(id);
+
+    }
+    var firstName = _id("firstName").value;
+    var lastName = _id("lastName").value;
+    var male = _id("male");
+    var female = _id("female");
+    var states = _id("states");
+    var checkbox = _id("checkbox");
+
+
+    function background() {
+
+        if (firstName.value == "" || firstName.value == null || firstName == undefined) {
+            firstName.style.backgroundColor = 'red';
+
+
+        } else {
+            firstName.style.backgroundColor = '';
+
+
+        }
+
+        if (lastName.value == "" || lastName.value == null || firstName == undefined) {
+            lastName.style.backgroundColor = "red";
+
+
+        } else {
+            lastName.style.backgroundColor = "";
+
+
+        }
+
+        if (male.checked == false || female.value == false) {
+            alert("Select the value");
+        }
+
+        if (state.value == "") {
+            alert("Choose a State");
+        }
+        if (checkbox.checked == false) {
+            alert("Accept the Terms and Conditions");
+        }
+
+
+
+    };
+
+    submit.addEventListener("click", background(), false)
+    </script>
+</body>
+
+</html>
